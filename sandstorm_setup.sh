@@ -31,6 +31,13 @@ done
 # Fix "rcmd: socket: Permission denied" when using pdsh
 echo ssh > /etc/pdsh/rcmd_default
 
+# Enable ssh across cloudlab machines
+/usr/bin/geni-get key > ~/.ssh/id_rsa 
+chmod 600 ~/.ssh/id_rsa 
+ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub 
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys 
+chmod 644 ~/.ssh/authorized_keys 
+
 # Enable hugepage support: http://dpdk.org/doc/guides/linux_gsg/sys_reqs.html
 # The changes will take effects after reboot.
 # Reserve 1GB hugepages via kernel boot parameters
