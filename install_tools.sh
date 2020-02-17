@@ -10,3 +10,8 @@ wget https://az764295.vo.msecnd.net/stable/ae08d5460b5a45169385ff3fd44208f431992
 sudo dpkg -i code_1.42.0-1580986622_amd64.deb
 rm code_1.42.0-1580986622_amd64.deb
 
+y | curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+rustup toolchain install nightly
+rustup default nightly
+echo "source $HOME/.cargo/env"
