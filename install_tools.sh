@@ -15,3 +15,12 @@ source $HOME/.cargo/env
 rustup toolchain install nightly
 rustup default nightly
 echo "source $HOME/.cargo/env"
+
+# GUI
+sudo apt update
+sudo apt install xfce4
+sudo apt install xrdp
+sudo adduser xrdp ssl-cert
+echo xfce4-session >~/.xsession
+sudo systemctl restart xrdp
+sudo reboot
