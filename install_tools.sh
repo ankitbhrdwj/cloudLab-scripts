@@ -25,3 +25,8 @@ sudo adduser xrdp ssl-cert
 echo xfce4-session >~/.xsession
 sudo systemctl restart xrdp
 sudo reboot
+
+# Perf when version is missing
+sudo apt update
+sudo apt upgrade
+sudo apt install --reinstall linux-image-generic
