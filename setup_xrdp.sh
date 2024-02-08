@@ -13,3 +13,13 @@ cd ~
 echo "xfce4-session" | tee .xsession
 
 sudo systemctl restart xrdp
+
+# Root permission for color
+vi /etc/polkit-1/localauthority/50-local.d/color.pkla
+
+[Allow colord for all users]
+Identity=unix-user:*
+Action=org.freedesktop.color-manager.create-device;org.freedesktop.color-manager.create-profile;org.freedesktop.color-manager.delete-device;org.freedesktop.color-manager.delete-profile;org.freedesktop.color-manager.modify-device;org.freedesktop.color-manager.modify-profile;org.freedesktop.packagekit.system-sources-refresh
+ResultAny=no
+ResultInactive=no
+ResultActive=yes
