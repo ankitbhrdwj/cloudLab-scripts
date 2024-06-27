@@ -41,3 +41,6 @@ python setup.py develop
 
 # Check the version
 python -c "import torch;print(torch.__version__)"
+python -c "import torch;print(torch.version.cuda)"
+python -c "import torch;print(torch.cuda.nccl.version())"
+
