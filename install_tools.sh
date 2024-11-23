@@ -30,3 +30,7 @@ sudo reboot
 sudo apt update
 sudo apt upgrade
 sudo apt install --reinstall linux-image-generic
+
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
